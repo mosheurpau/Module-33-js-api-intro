@@ -1,16 +1,16 @@
-function loadComment() {
+function loadAlbum() {
     fetch('https://jsonplaceholder.typicode.com/albums')
         .then((response) => response.json())
-        .then((data) => displayComments(data));
+        .then((data) => displayAlbums(data));
 }
-loadComment();
+loadAlbum();
 
-function displayComments(comments) {
-    const albumContainer = document.getElementById('comments');
-    for (const comment of comments) {
+function displayAlbums(albums) {
+    const albumContainer = document.getElementById('albums');
+    for (const album of albums) {
         const p = document.createElement('p');
         p.style.textAlign = 'center';
-        p.innerText = comment.body;
+        p.innerText = album.title;
         albumContainer.appendChild(p);
     }
 }
